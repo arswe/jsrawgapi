@@ -5,6 +5,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Typography,
 } from '@mui/material'
 import CriticScore from './CriticScore'
 import Emoji from './Emoji'
@@ -12,7 +13,7 @@ import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {
   return (
-    <Card>
+    <Card elevation={2}>
       <CardActionArea>
         <CardMedia
           component='img'
@@ -23,7 +24,15 @@ const GameCard = ({ game }) => {
         />
         <CardContent sx={{ 1: 2 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            {game.name} <CriticScore score={game.metacritic} />
+            <Typography
+              variant='h6'
+              component={'h6'}
+              sx={{ fontWeight: 600, fontFamily: 'rajdhani' }}
+            >
+              {game.name}
+            </Typography>
+
+            <CriticScore score={game.metacritic} />
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <PlatformIconList

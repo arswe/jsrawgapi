@@ -6,7 +6,7 @@ const CriticScore = ({ score }) => {
 
   return (
     <Badge
-      sx={{ mt: 2, whiteSpace: 'nowrap' }}
+      sx={{ mt: 2, mr: 1, whiteSpace: 'nowrap' }}
       badgeContent={score}
       color={styles}
     />
