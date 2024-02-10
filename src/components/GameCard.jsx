@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  Typography,
 } from '@mui/material'
+import CriticScore from './CriticScore'
+import Emoji from './Emoji'
 import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {
@@ -19,13 +21,16 @@ const GameCard = ({ game }) => {
           image={game.background_image}
           sx={{ objectFit: 'cover' }}
         />
-        <CardContent>
-          <Typography gutterBottom variant='h6' component='div'>
-            {game.name}
-          </Typography>
-          <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
-          />
+        <CardContent sx={{ 1: 2 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            {game.name} <CriticScore score={game.metacritic} />
+          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+            <PlatformIconList
+              platforms={game.parent_platforms.map((p) => p.platform)}
+            />
+            <Emoji rating={game.rating_top} />
+          </Box>
         </CardContent>
       </CardActionArea>
     </Card>
