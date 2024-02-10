@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardActionArea,
@@ -6,23 +7,19 @@ import {
   Typography,
 } from '@mui/material'
 
-const GameCard = () => {
+const GameCard = ({ game }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card>
       <CardActionArea>
         <CardMedia
           component='img'
           height='140'
-          image='/static/images/cards/contemplative-reptile.jpg'
+          image={game.background_image}
           alt='green iguana'
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
-            Lizard
-          </Typography>
-          <Typography variant='body2' color='text.secondary'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {game.name}
           </Typography>
         </CardContent>
       </CardActionArea>
