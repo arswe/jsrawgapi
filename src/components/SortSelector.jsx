@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 
-const SortSelector = ({ onSelectSortOrder }) => {
+const SortSelector = ({ onSelectSortOrder, sortOrder }) => {
   const sortOrders = [
     { value: '', label: 'Relevance' },
     { value: '-added', label: 'Date added' },
@@ -11,15 +11,20 @@ const SortSelector = ({ onSelectSortOrder }) => {
     { value: '-rating', label: 'Average rating' },
   ]
 
+  const currentSortOrder = sortOrders.find((order) => order.value === sortOrder)
+
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
-        <InputLabel size='small' id='sortselector'></InputLabel>
+        <InputLabel size='small' id='OrderbyRelevance'>
+          {currentSortOrder?.label || 'Relevance'}
+        </InputLabel>
         <Select
           size='small'
           labelId='OrderbyRelevance'
-          id='demo-select-small'
-          label='OrderbyRelevance'
+          id='OrderbyRelevance'
+          label={currentSortOrder?.label || 'Relevance'}
+          value={currentSortOrder?.label || ''}
           onChange={(event) => onSelectSortOrder(event.target.value)}
         >
           {sortOrders.map((sortOrder) => (

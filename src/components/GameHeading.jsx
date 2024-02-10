@@ -1,5 +1,7 @@
+import { Box } from '@mui/material'
+
 const GameHeading = () => {
-  return <div>GameHeading</div>
+  return <Box sx={{ my: 5 }}>GameHeading</Box>
 }
 
 export default GameHeading
