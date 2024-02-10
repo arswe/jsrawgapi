@@ -10,13 +10,15 @@ const GameGrid = () => {
       .get('/games')
       .then((response) => getGames(response.data.results))
       .catch((err) => getError(err.message))
-  })
+  }, [])
+
+  console.log(games)
 
   return (
     <ul>
       {error && <p>{error}</p>}
       {games.map((game) => (
-        <li key={game.id}> {game.title} </li>
+        <li key={game.id}> {game.name} </li>
       ))}
     </ul>
   )
