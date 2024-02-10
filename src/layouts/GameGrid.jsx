@@ -1,26 +1,19 @@
-import { useEffect, useState } from 'react'
-import apiClient from '../services/api-client'
+import { Grid } from '@mui/material'
+import GameCard from '../components/GameCard'
+import useGames from '../hooks/useGames'
 
 const GameGrid = () => {
-  const [games, getGames] = useState([])
-  const [error, getError] = useState('')
-
-  useEffect(() => {
-    apiClient
-      .get('/games')
-      .then((response) => getGames(response.data.results))
-      .catch((err) => getError(err.message))
-  }, [])
-
-  console.log(games)
+  const { games, error } = useGames()
 
   return (
-    <ul>
+    <Grid container spacing={2}>
       {error && <p>{error}</p>}
       {games.map((game) => (
-        <li key={game.id}> {game.name} </li>
+        <Grid item xs={12} sm={12} md={6} lg={4} xl={3} key={game.id}>
+          <GameCard game={game} />
+        </Grid>
       ))}
-    </ul>
+    </Grid>
   )
 }
 

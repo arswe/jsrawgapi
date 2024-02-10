@@ -1,11 +1,12 @@
+import { Container } from '@mui/material'
 import GameGrid from './layouts/GameGrid'
 
 function App() {
   return (
-    <div>
+    <Container>
       <h1>All Games</h1>
       <GameGrid />
-    </div>
+    </Container>
   )
 }
 
