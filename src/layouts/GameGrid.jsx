@@ -5,7 +5,7 @@ import GameCardContainer from '../containers/GameCardContainer'
 import useGames from '../hooks/useGames'
 
 const GameGrid = () => {
-  const { games, error, isLaoding } = useGames()
+  const { data, error, isLaoding } = useGames()
 
   if (error) return <div>Something went wrong!</div>
 
@@ -22,7 +22,7 @@ const GameGrid = () => {
           </Grid>
         ))}
 
-      {games.map((game) => (
+      {data?.map((game) => (
         <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={game.id}>
           <GameCardContainer>
             <GameCard game={game} />

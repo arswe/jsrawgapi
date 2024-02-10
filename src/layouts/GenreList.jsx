@@ -3,7 +3,9 @@ import useGenres from '../hooks/useGenres'
 import getCroppedImageUrl from '../utils/image-url'
 
 const GenreList = () => {
-  const { genres } = useGenres()
+  const { data, error } = useGenres()
+  if (error) return <div>Something went wrong!</div>
+  
   return (
     <List>
       <Typography
@@ -13,7 +15,7 @@ const GenreList = () => {
       >
         Genres
       </Typography>
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <ListItem key={genre.id}>
           <Stack direction='row' spacing={2} overflow={'hidden'}>
             <Avatar
