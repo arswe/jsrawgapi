@@ -8,16 +8,15 @@ import GameGrid from './layouts/GameGrid'
 import GenreList from './layouts/GenreList'
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState(null)
-  const [selectedPlatform, setSelectedPlatform] = useState(null)
+  const [gameQuery, setGameQuery] = useState({})
 
   return (
     <Box sx={{ m: 1 }}>
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={4} lg={3} xl={2}>
           <GenreList
-            selectedGenre={selectedGenre}
-            onSelectGenre={(genre) => setSelectedGenre(genre)}
+            selectedGenre={gameQuery.genre}
+            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           />
         </Grid>
 
@@ -25,15 +24,14 @@ function App() {
           <GameHeading />
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <PlatformSelector
-              selectedPlatform={selectedPlatform}
-              onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
             />
             <SortSelector />
           </Box>
-          <GameGrid
-            selectedPlatform={selectedPlatform}
-            selectedGenre={selectedGenre}
-          />
+          <GameGrid gameQuery={gameQuery} />
         </Grid>
       </Grid>
     </Box>

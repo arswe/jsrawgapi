@@ -5,8 +5,8 @@ import GameCardSkeleton from '../components/GameCardSkeleton'
 import GameCardContainer from '../containers/GameCardContainer'
 import useGames from '../hooks/useGames'
 
-const GameGrid = ({ selectedGenre, selectedPlatform }) => {
-  const { data, error, isLaoding } = useGames(selectedGenre, selectedPlatform)
+const GameGrid = ({ gameQuery }) => {
+  const { data, error, isLaoding } = useGames(gameQuery)
 
   if (error) return <div>Something went wrong!</div>
 
