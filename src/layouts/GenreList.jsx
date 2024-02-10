@@ -34,7 +34,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
             />
             <Typography
               component={'a'}
-              fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
+              fontWeight={genre.id === selectedGenre?.id ? 'bold' : '500'}
               sx={{
                 pt: 1,
                 fontFamily: 'rajdhani',
