@@ -9,7 +9,7 @@ import GenreList from './layouts/GenreList'
 
 function App() {
   return (
-    <Box sx={{ m: 2 }}>
+    <Box sx={{ m: 1 }}>
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={4} lg={3} xl={2}>
           <GenreList />
