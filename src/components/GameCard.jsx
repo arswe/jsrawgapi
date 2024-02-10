@@ -6,6 +6,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material'
+import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {
   return (
@@ -21,10 +22,9 @@ const GameCard = ({ game }) => {
           <Typography gutterBottom variant='h5' component='div'>
             {game.name}
           </Typography>
-
-          {game.parent_platforms.map(({ platform }) => (
-            <Typography key={platform.id}>{platform.name}</Typography>
-          ))}
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
         </CardContent>
       </CardActionArea>
     </Card>

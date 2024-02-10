@@ -1,7 +1,14 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+import { Box, Typography } from '@mui/material'
 
-const PlatformIconList = () => {
-  return <div>PlatformIconList</div>
+const PlatformIconList = ({ platforms }) => {
+  return (
+    <Box>
+      {platforms.map((platform) => (
+        <Typography key={platform.id}>{platform.name}</Typography>
+      ))}
+    </Box>
+  )
 }
 
 export default PlatformIconList
