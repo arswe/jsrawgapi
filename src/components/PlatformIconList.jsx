@@ -1,13 +1,40 @@
 /* eslint-disable react/prop-types */
-import { Box, Typography } from '@mui/material'
+import { Grid, IconButton } from '@mui/material'
+import { createElement } from 'react'
+import { BsGlobe } from 'react-icons/bs'
+import {
+  FaAndroid,
+  FaApple,
+  FaLinux,
+  FaPlaystation,
+  FaWindows,
+  FaXbox,
+} from 'react-icons/fa'
+import { MdPhoneIphone } from 'react-icons/md'
+import { SiNintendo } from 'react-icons/si'
 
 const PlatformIconList = ({ platforms }) => {
+  const iconMap = {
+    pc: FaWindows,
+    playstation: FaPlaystation,
+    xbox: FaXbox,
+    nintendo: SiNintendo,
+    mac: FaApple,
+    linux: FaLinux,
+    android: FaAndroid,
+    ios: MdPhoneIphone,
+    web: BsGlobe,
+  }
   return (
-    <Box>
+    <Grid container spacing={1}>
       {platforms.map((platform) => (
-        <Typography key={platform.id}>{platform.name}</Typography>
+        <Grid item key={platform.id}>
+          <IconButton color='success' size='small'>
+            {createElement(iconMap[platform.slug])}
+          </IconButton>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   )
 }
 

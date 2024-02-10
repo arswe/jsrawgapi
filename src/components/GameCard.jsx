@@ -14,12 +14,13 @@ const GameCard = ({ game }) => {
       <CardActionArea>
         <CardMedia
           component='img'
+          alt={game.name}
           height='140'
           image={game.background_image}
-          alt='green iguana'
+          sx={{ objectFit: 'cover' }}
         />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='div'>
+          <Typography gutterBottom variant='h6' component='div'>
             {game.name}
           </Typography>
           <PlatformIconList
