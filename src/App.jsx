@@ -3,7 +3,7 @@ import GameGrid from './layouts/GameGrid'
 
 function App() {
   return (
-    <Container>
+    <Container maxWidth={'xl'}>
       <h1>All Games</h1>
       <GameGrid />
     </Container>

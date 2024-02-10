@@ -7,6 +7,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material'
+import getCroppedImageUrl from '../utils/image-url'
 import CriticScore from './CriticScore'
 import Emoji from './Emoji'
 import PlatformIconList from './PlatformIconList'
@@ -19,7 +20,7 @@ const GameCard = ({ game }) => {
           component='img'
           alt={game.name}
           height='140'
-          image={game.background_image}
+          image={getCroppedImageUrl(game.background_image)}
           sx={{ objectFit: 'cover' }}
         />
         <CardContent sx={{ 1: 2 }}>
