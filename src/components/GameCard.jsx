@@ -21,6 +21,10 @@ const GameCard = ({ game }) => {
           <Typography gutterBottom variant='h5' component='div'>
             {game.name}
           </Typography>
+
+          {game.parent_platforms.map(({ platform }) => (
+            <Typography key={platform.id}>{platform.name}</Typography>
+          ))}
         </CardContent>
       </CardActionArea>
     </Card>
