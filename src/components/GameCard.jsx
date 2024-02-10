@@ -14,7 +14,7 @@ import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {
   return (
-    <Card elevation={2}>
+    <Card>
       <CardActionArea>
         <CardMedia
           component='img'
