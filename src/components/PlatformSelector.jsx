@@ -1,22 +1,28 @@
+/* eslint-disable react/prop-types */
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import usePlatform from '../hooks/usePlatform'
 
-const PlatformSelector = () => {
+const PlatformSelector = ({ onSelectPlatform, selectedPlatform }) => {
   const { data } = usePlatform()
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
         <InputLabel size='small' id='Platform'>
-          Age
+          {selectedPlatform?.name || 'Platform'}
         </InputLabel>
         <Select
           labelId='Platform'
-          label='Age'
+          label={selectedPlatform?.name || 'Platform'}
           size='small'
+          value={selectedPlatform?.name || ''}
           onChange={() => console.log('ok')}
         >
           {data.map((platform) => (
-            <MenuItem key={platform.id} value={platform.id}>
+            <MenuItem
+              key={platform.id}
+              value={platform.name}
+              onClick={() => onSelectPlatform(platform)}
+            >
               {platform.name}
             </MenuItem>
           ))}

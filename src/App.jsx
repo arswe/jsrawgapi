@@ -9,6 +9,7 @@ import GenreList from './layouts/GenreList'
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState(null)
+  const [selectedPlatform, setSelectedPlatform] = useState(null)
 
   return (
     <Box sx={{ m: 1 }}>
@@ -23,10 +24,16 @@ function App() {
         <Grid item xs={6} sm={8} md={8} lg={9} xl={10}>
           <GameHeading />
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <PlatformSelector />
+            <PlatformSelector
+              selectedPlatform={selectedPlatform}
+              onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+            />
             <SortSelector />
           </Box>
-          <GameGrid selectedGenre={selectedGenre} />
+          <GameGrid
+            selectedPlatform={selectedPlatform}
+            selectedGenre={selectedGenre}
+          />
         </Grid>
       </Grid>
     </Box>
