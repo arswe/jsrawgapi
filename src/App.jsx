@@ -29,7 +29,11 @@ function App() {
                 setGameQuery({ ...gameQuery, platform })
               }
             />
-            <SortSelector />
+            <SortSelector
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+            />
           </Box>
           <GameGrid gameQuery={gameQuery} />
         </Grid>

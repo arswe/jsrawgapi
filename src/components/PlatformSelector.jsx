@@ -15,7 +15,6 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }) => {
           label={selectedPlatform?.name || 'Platform'}
           size='small'
           value={selectedPlatform?.name || ''}
-          onChange={() => console.log('ok')}
         >
           {data.map((platform) => (
             <MenuItem
