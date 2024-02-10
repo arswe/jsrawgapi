@@ -1,30 +1,25 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import { useState } from 'react'
+import usePlatform from '../hooks/usePlatform'
 
 const PlatformSelector = () => {
-  const [age, setAge] = useState('')
-
-  const handleChange = (event) => {
-    setAge(event.target.value)
-  }
-
+  const { data } = usePlatform()
   return (
-    <Box sx={{ minWidth: 160 }}>
+    <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
-        <InputLabel size='small' id='PlatformSelector'>
+        <InputLabel size='small' id='Platform'>
           Age
         </InputLabel>
         <Select
-          labelId='PlatformSelector'
-          id='demo-simple-select'
-          value={age}
+          labelId='Platform'
           label='Age'
           size='small'
-          onChange={handleChange}
+          onChange={() => console.log('ok')}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {data.map((platform) => (
+            <MenuItem key={platform.id} value={platform.id}>
+              {platform.name}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>

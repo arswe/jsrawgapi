@@ -23,8 +23,8 @@ function App() {
         <Grid item xs={6} sm={8} md={8} lg={9} xl={10}>
           <GameHeading />
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <SortSelector />
             <PlatformSelector />
+            <SortSelector />
           </Box>
           <GameGrid selectedGenre={selectedGenre} />
         </Grid>
