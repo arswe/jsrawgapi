@@ -29,7 +29,12 @@ const PlatformIconList = ({ platforms }) => {
     <Grid container spacing={1}>
       {platforms.map((platform) => (
         <Grid item key={platform.id}>
-          <IconButton color='success' size='small'>
+          <IconButton
+            size='small'
+            edge='start'
+            color='success'
+            aria-label='open drawer'
+          >
             {createElement(iconMap[platform.slug])}
           </IconButton>
         </Grid>
