@@ -9,11 +9,9 @@ const useGames = () => {
 
   useEffect(() => {
     const controller = new AbortController()
-
     setIsLaoding(true)
-
     apiClient
-      .get('/games', { signal: controller.abort })
+      .get('/games', { signal: controller.signal })
       .then((response) => {
         getGames(response.data.results)
         setIsLaoding(false)

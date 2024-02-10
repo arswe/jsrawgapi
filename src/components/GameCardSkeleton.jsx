@@ -1,4 +1,4 @@
-import { Card, CardContent, Skeleton, Typography } from '@mui/material'
+import { Card, CardContent, Skeleton } from '@mui/material'
 import { Box } from '@mui/system'
 
 const GameCardSkeleton = () => {
@@ -7,15 +7,15 @@ const GameCardSkeleton = () => {
       <Skeleton variant='rectangular' height={240} />
 
       <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Skeleton variant='rectangular' width={100} height={24} />
-
-          <Skeleton variant='rectangular' width={60} height={24} />
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+          <Skeleton variant='rectangular' width={100} />
+          <Skeleton variant='rectangular' width={60} />
         </Box>
 
-        <Typography gutterBottom variant='h6' component='h6'>
-          <Skeleton width='80%' />
-        </Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Skeleton variant='rectangular' width={90} />
+          <Skeleton variant='rectangular' width={10} />
+        </Box>
       </CardContent>
     </Card>
   )
