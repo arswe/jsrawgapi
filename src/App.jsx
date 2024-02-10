@@ -1,8 +1,12 @@
-const App = () => {
-    return <h1 className="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+import GameGrid from './layouts/GameGrid'
 
+function App() {
+  return (
+    <div>
+      <h1>All Games</h1>
+      <GameGrid />
+    </div>
+  )
 }
 
 export default App
