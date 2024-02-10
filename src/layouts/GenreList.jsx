@@ -1,11 +1,20 @@
-import { Avatar, List, ListItem, Stack, Typography } from '@mui/material'
+import {
+  Avatar,
+  CircularProgress,
+  List,
+  ListItem,
+  Stack,
+  Typography,
+} from '@mui/material'
 import useGenres from '../hooks/useGenres'
 import getCroppedImageUrl from '../utils/image-url'
 
 const GenreList = () => {
-  const { data, error } = useGenres()
+  const { data, error, isLaoding } = useGenres()
   if (error) return <div>Something went wrong!</div>
-  
+
+  if (isLaoding) return <CircularProgress />
+
   return (
     <List>
       <Typography
@@ -25,14 +34,13 @@ const GenreList = () => {
             <Typography
               component={'a'}
               sx={{
+                pt: 1,
                 fontFamily: 'rajdhani',
-                fontWeight: 600,
-                ':hover': {
-                  textDecoration: 'underline',
-                },
+                ':hover': { textDecoration: 'underline' },
                 cursor: 'pointer',
+                whiteSpace: 'nowrap',
               }}
-              whiteSpace={'nowrap'}
+              onClick={() => console.log('log')}
             >
               {genre.name}
             </Typography>
