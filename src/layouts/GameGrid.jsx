@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Grid } from '@mui/material'
 import GameCard from '../components/GameCard'
 import GameCardSkeleton from '../components/GameCardSkeleton'
 import GameCardContainer from '../containers/GameCardContainer'
 import useGames from '../hooks/useGames'
 
-const GameGrid = () => {
-  const { data, error, isLaoding } = useGames()
+const GameGrid = ({ selectedGenre }) => {
+  const { data, error, isLaoding } = useGames(selectedGenre)
 
   if (error) return <div>Something went wrong!</div>
 

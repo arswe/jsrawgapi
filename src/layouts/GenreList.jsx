@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Avatar,
   CircularProgress,
@@ -9,7 +10,7 @@ import {
 import useGenres from '../hooks/useGenres'
 import getCroppedImageUrl from '../utils/image-url'
 
-const GenreList = () => {
+const GenreList = ({ onSelectGenre }) => {
   const { data, error, isLaoding } = useGenres()
   if (error) return <div>Something went wrong!</div>
 
@@ -40,7 +41,7 @@ const GenreList = () => {
                 cursor: 'pointer',
                 whiteSpace: 'nowrap',
               }}
-              onClick={() => console.log('log')}
+              onClick={() => onSelectGenre(genre)}
             >
               {genre.name}
             </Typography>
