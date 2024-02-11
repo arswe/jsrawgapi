@@ -21,7 +21,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
       <Typography
         variant='h4'
         component='h4'
-        sx={{ m: 1, fontFamily: 'rajdhani', fontWeight: 700 }}
+        sx={{ m: 1, fontFamily: 'rajdhani', fontWeight: 600 }}
       >
         Genres
       </Typography>

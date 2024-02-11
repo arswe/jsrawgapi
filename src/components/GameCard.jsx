@@ -8,9 +8,9 @@ import {
   Typography,
 } from '@mui/material'
 import getCroppedImageUrl from '../utils/image-url'
+import PlatformIconList from './PlatformIconList'
 import CriticScore from './shared/CriticScore'
 import Emoji from './shared/Emoji'
-import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {
   return (
