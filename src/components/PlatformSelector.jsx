@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import usePlatform from '../hooks/usePlatform'
 import usePlatforms from '../hooks/usePlatforms'
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }) => {
   const { data, error } = usePlatforms()
 
-  const selectedPlatform = data?.results.find(
-    (p) => p.id === selectedPlatformId
-  )
+  const selectedPlatform = usePlatform(selectedPlatformId)
 
   if (error) return null
 
