@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import usePlatform from '../hooks/usePlatform'
+import usePlatforms from '../hooks/usePlatforms'
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }) => {
-  const { data } = usePlatform()
+  const { data } = usePlatforms()
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
