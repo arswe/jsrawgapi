@@ -1,5 +1,9 @@
-import genres from '../data/genres'
+import { useQuery } from '@tanstack/react-query'
 
-const useGenres = () => ({ data: genres, isLoading: false, error: null })
+const useGenres = () =>
+  useQuery({
+    queryKey: ['genre'],
+    queryFn: () => ,
+  })
 
 export default useGenres
