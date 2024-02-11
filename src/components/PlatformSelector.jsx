@@ -17,7 +17,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }) => {
           size='small'
           value={selectedPlatform?.name || ''}
         >
-          {data.map((platform) => (
+          {data?.results.map((platform) => (
             <MenuItem
               sx={{ fontFamily: 'rajdhani' }}
               key={platform.id}
