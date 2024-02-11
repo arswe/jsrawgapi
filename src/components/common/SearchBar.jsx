@@ -1,6 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search'
 import { InputBase } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
+import { useRef } from 'react'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -45,16 +46,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const SearchBar = () => {
+  const ref = useRef(null)
   return (
-    <Search>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder='Search…'
-        inputProps={{ 'aria-label': 'search' }}
-      />
-    </Search>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        if (ref.current) console.log(ref.current.value)
+      }}
+    >
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase
+          ref={ref}
+          placeholder='Search…'
+          inputProps={{ 'aria-label': 'search' }}
+        />
+      </Search>
+    </form>
   )
 }
 
