@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import SaveIcon from '@mui/icons-material/Save'
-import LoadingButton from '@mui/lab/LoadingButton'
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import React from 'react'
 import GameCard from '../components/GameCard'
 import GameCardSkeleton from '../components/GameCardSkeleton'
@@ -46,16 +44,13 @@ const GameGrid = ({ gameQuery }) => {
       ))}
 
       {hasNextPage && (
-        <LoadingButton
-          loading
-          loadingPosition='start'
-          startIcon={<SaveIcon />}
+        <Button
           variant='outlined'
           onClick={() => fetchNextPage()}
-          sx={{ fontFamily: 'rajdhani', m: 1, fontWeight: 700 }}
+          sx={{ fontFamily: 'rajdhani', m: 1, fontWeight: 600 }}
         >
           {isFetchingNextPage ? 'Laoding ' : 'Laod More'}
-        </LoadingButton>
+        </Button>
       )}
     </Grid>
   )
