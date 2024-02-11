@@ -2,7 +2,7 @@
 import { Grid } from '@mui/material'
 import GameCard from '../components/GameCard'
 import GameCardSkeleton from '../components/GameCardSkeleton'
-import GameCardContainer from '../containers/GameCardContainer'
+import GameCardContainer from '../components/containers/GameCardContainer'
 import useGames from '../hooks/useGames'
 
 const GameGrid = ({ gameQuery }) => {

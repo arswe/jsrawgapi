@@ -8,8 +8,8 @@ import {
   Typography,
 } from '@mui/material'
 import getCroppedImageUrl from '../utils/image-url'
-import CriticScore from './CriticScore'
-import Emoji from './Emoji'
+import CriticScore from './shared/CriticScore'
+import Emoji from './shared/Emoji'
 import PlatformIconList from './PlatformIconList'
 
 const GameCard = ({ game }) => {

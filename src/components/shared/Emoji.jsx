@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Avatar, Stack } from '@mui/material'
-import bullsEye from '../assets/bulls-eye.webp'
-import meh from '../assets/meh.webp'
-import thumbsUp from '../assets/thumbs-up.webp'
+import bullsEye from '../../assets/bulls-eye.webp'
+import meh from '../../assets/meh.webp'
+import thumbsUp from '../../assets/thumbs-up.webp'
 
 const Emoji = ({ rating }) => {
   if (rating < 3) return null
