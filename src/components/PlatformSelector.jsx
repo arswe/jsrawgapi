@@ -3,19 +3,26 @@ import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import usePlatforms from '../hooks/usePlatforms'
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }) => {
-  const { data } = usePlatforms()
+  const { data, error } = usePlatforms()
+
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformId
+  )
+
+  if (error) return null
+
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
         <InputLabel size='small' id='Platform' sx={{ fontFamily: 'rajdhani' }}>
-          {selectedPlatformId?.name || 'Platform'}
+          {selectedPlatform?.name || 'Platform'}
         </InputLabel>
         <Select
           sx={{ fontFamily: 'rajdhani' }}
           labelId='Platform'
-          label={selectedPlatformId?.name || 'Platform'}
+          label={selectedPlatform?.name || 'Platform'}
           size='small'
-          value={selectedPlatformId?.name || ''}
+          value={selectedPlatform?.name || ''}
         >
           {data?.results.map((platform) => (
             <MenuItem

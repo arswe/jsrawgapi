@@ -5,12 +5,12 @@ const apiClient = new APIClient('/games')
 
 const useGames = (gameQuery) =>
   useInfiniteQuery({
-    queryKey: ['/games'],
+    queryKey: ['games'],
     queryFn: ({ pageParam = 1 }) =>
       apiClient.getAll({
         params: {
           genres: gameQuery.genreId,
-          parent_platforms: gameQuery.platform?.id,
+          parent_platforms: gameQuery.platformId,
           ordering: gameQuery.sortOrder,
           search: gameQuery.searchText,
           page: pageParam,
