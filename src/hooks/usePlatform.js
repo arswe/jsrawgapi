@@ -1,5 +1,5 @@
-import useData from './useData'
+import platforms from '../data/platforms'
 
-const usePlatform = () => useData('./platforms/lists/parents')
+const usePlatform = () => ({ data: platforms, isLoading: false, error: null })
 
 export default usePlatform
