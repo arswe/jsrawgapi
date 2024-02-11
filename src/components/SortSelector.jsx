@@ -16,20 +16,24 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }) => {
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
-        <InputLabel size='small' id='OrderbyRelevance'>
+        <InputLabel
+          size='small'
+          id='OrderbyRelevance'
+          sx={{ fontFamily: 'rajdhani' }}
+        >
           {currentSortOrder?.label || 'Relevance'}
         </InputLabel>
         <Select
+          sx={{ fontFamily: 'rajdhani' }}
+          labelId='Platform'
+          label={currentSortOrder?.label || 'Platform'}
           size='small'
-          labelId='OrderbyRelevance'
-          id='OrderbyRelevance'
-          label={currentSortOrder?.label || 'Relevance'}
           value={currentSortOrder?.label || ''}
-          onChange={(event) => onSelectSortOrder(event.target.value)}
         >
           {sortOrders.map((sortOrder) => (
             <MenuItem
-              key={sortOrder.value}
+              sx={{ fontFamily: 'rajdhani' }}
+              key={sortOrder.label}
               value={sortOrder.value}
               onClick={() => onSelectSortOrder(sortOrder.value)}
             >
