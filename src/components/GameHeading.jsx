@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Box, Typography } from '@mui/material'
+import useGenres from '../hooks/useGenres'
 
 const GameHeading = ({ gameQuery }) => {
+  const { data: genres } = useGenres()
+  const genre = genres.results.find((g) => g.id === gameQuery.genreId)
+
   const heading = `
   ${gameQuery.platform?.name || ''} 
-  ${gameQuery.genre?.name || ''} Games`
+  ${genre?.name || ''} Games`
   return (
     <Box sx={{ my: 2 }}>
       <Typography

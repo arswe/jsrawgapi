@@ -23,7 +23,9 @@ function App() {
             <GengreHeading gameQuery={gameQuery} />
             <GenreList
               selectedGenre={gameQuery.genre}
-              onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+              onSelectGenre={(genre) =>
+                setGameQuery({ ...gameQuery, genreId: genre.id })
+              }
             />
           </Grid>
 
