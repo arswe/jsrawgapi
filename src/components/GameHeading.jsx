@@ -8,8 +8,8 @@ const GameHeading = ({ gameQuery }) => {
   return (
     <Box sx={{ my: 2 }}>
       <Typography
-        component={'h4'}
-        variant='h4'
+        component={'h5'}
+        variant='h5'
         sx={{ fontFamily: 'rajdhani', fontWeight: 600 }}
       >
         {heading}

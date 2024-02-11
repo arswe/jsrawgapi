@@ -12,8 +12,9 @@ import getCroppedImageUrl from '../utils/image-url'
 
 const GenreList = ({ onSelectGenre, selectedGenre }) => {
   const { data, error, isLaoding } = useGenres()
-  if (error) return <div>Something went wrong!</div>
+  console.log(data)
 
+  if (error) return <div>Something went wrong!</div>
   if (isLaoding) return <CircularProgress />
 
   return (
