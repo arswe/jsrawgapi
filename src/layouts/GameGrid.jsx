@@ -23,7 +23,7 @@ const GameGrid = ({ gameQuery }) => {
           </Grid>
         ))}
 
-      {data?.map((game) => (
+      {data?.results.map((game) => (
         <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={game.id}>
           <GameCardContainer>
             <GameCard game={game} />
