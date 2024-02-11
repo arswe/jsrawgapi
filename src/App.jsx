@@ -2,6 +2,7 @@ import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import { useState } from 'react'
 import GameHeading from './components/GameHeading'
+import GengreHeading from './components/GengreHeading'
 import PlatformSelector from './components/PlatformSelector'
 import SortSelector from './components/SortSelector'
 import Navbar from './components/common/Navbar'
@@ -19,6 +20,7 @@ function App() {
       <Box sx={{ m: 1 }}>
         <Grid container spacing={1}>
           <Grid item xs={6} sm={4} md={4} lg={3} xl={2}>
+            <GengreHeading gameQuery={gameQuery} />
             <GenreList
               selectedGenre={gameQuery.genre}
               onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}

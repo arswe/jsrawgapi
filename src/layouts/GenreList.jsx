@@ -18,13 +18,6 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
 
   return (
     <List>
-      <Typography
-        variant='h4'
-        component='h4'
-        sx={{ m: 1, fontFamily: 'rajdhani', fontWeight: 600 }}
-      >
-        Genres
-      </Typography>
       {data.map((genre) => (
         <ListItem key={genre.id}>
           <Stack direction='row' spacing={2} overflow={'hidden'}>
@@ -40,7 +33,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
                 fontFamily: 'rajdhani',
                 ':hover': { textDecoration: 'underline' },
                 cursor: 'pointer',
-                whiteSpace: 'nowrap',
+                textAlign: 'left',
               }}
               onClick={() => onSelectGenre(genre)}
             >
