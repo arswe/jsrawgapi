@@ -10,7 +10,7 @@ import {
 import useGenres from '../hooks/useGenres'
 import getCroppedImageUrl from '../utils/image-url'
 
-const GenreList = ({ onSelectGenre, selectedGenre }) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }) => {
   const { data, error, isLaoding } = useGenres()
 
   if (error) return <div>Something went wrong!</div>
@@ -27,7 +27,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
             />
             <Typography
               component={'a'}
-              fontWeight={genre.id === selectedGenre?.id ? 'bold' : '500'}
+              fontWeight={genre.id === selectedGenreId? 'bold' : '500'}
               sx={{
                 pt: 1,
                 fontFamily: 'rajdhani',
