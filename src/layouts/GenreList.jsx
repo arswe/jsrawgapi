@@ -18,7 +18,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
 
   return (
     <List>
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <ListItem key={genre.id}>
           <Stack direction='row' spacing={2} overflow={'hidden'}>
             <Avatar
