@@ -13,7 +13,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+      />
       <Box sx={{ m: 1 }}>
         <Grid container spacing={1}>
           <Grid item xs={6} sm={4} md={4} lg={3} xl={2}>

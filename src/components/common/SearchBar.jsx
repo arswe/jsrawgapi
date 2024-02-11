@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import SearchIcon from '@mui/icons-material/Search'
 import { InputBase } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
@@ -45,13 +46,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const ref = useRef(null)
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        if (ref.current) console.log(ref.current.value)
+        if (ref.current) onSearch(ref.current.value)
       }}
     >
       <Search>
@@ -59,7 +60,7 @@ const SearchBar = () => {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          ref={ref}
+          inputRef={ref}
           placeholder='Search…'
           inputProps={{ 'aria-label': 'search' }}
         />

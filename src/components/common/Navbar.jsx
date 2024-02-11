@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import SearchBar from './SearchBar'
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -19,7 +20,7 @@ const Navbar = () => {
           >
             Rawg API
           </Typography>
-          <SearchBar />
+          <SearchBar onSearch={onSearch} />
         </Toolbar>
       </AppBar>
     </Box>
