@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Grid } from '@mui/material'
+import React from 'react'
 import GameCard from '../components/GameCard'
 import GameCardSkeleton from '../components/GameCardSkeleton'
 import GameCardContainer from '../components/containers/GameCardContainer'
@@ -23,12 +24,16 @@ const GameGrid = ({ gameQuery }) => {
           </Grid>
         ))}
 
-      {data?.results.map((game) => (
-        <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={game.id}>
-          <GameCardContainer>
-            <GameCard game={game} />
-          </GameCardContainer>
-        </Grid>
+      {data.pages.map((page, index) => (
+        <React.Fragment key={index}>
+          {page.results.map((game) => (
+            <Grid item xs={12} sm={6} md={6} lg={4} xl={3} key={game.id}>
+              <GameCardContainer>
+                <GameCard game={game} />
+              </GameCardContainer>
+            </Grid>
+          ))}
+        </React.Fragment>
       ))}
     </Grid>
   )
