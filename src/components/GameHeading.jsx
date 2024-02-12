@@ -2,11 +2,14 @@
 import { Box, Typography } from '@mui/material'
 import useGenre from '../hooks/useGenre'
 import usePlatform from '../hooks/usePlatform'
+import useQueryStore from '../store'
 
-const GameHeading = ({ gameQuery }) => {
-  
-  const platform = usePlatform(gameQuery.platformId)
-  const genre = useGenre(gameQuery.genreId)
+const GameHeading = () => {
+  const genreId = useQueryStore((s) => s.gameQuery.genreId)
+  const platformId = useQueryStore((s) => s.gameQuery.platformId)
+
+  const genre = useGenre(genreId)
+  const platform = usePlatform(platformId)
 
   const heading = `${platform?.name || ''} ${genre?.name || ''} Games`
 

@@ -20,7 +20,7 @@ function App() {
           </Grid>
 
           <Grid item xs={6} sm={8} md={8} lg={9} xl={10}>
-            <GameHeading gameQuery={gameQuery} />
+            <GameHeading />
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <PlatformSelector
                 selectedPlatform={gameQuery.platformId}
