@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Box, Typography } from '@mui/material'
 import useGenres from '../hooks/useGenres'
-import usePlatform from '../hooks/usePlatform'
+import usePlatforms from '../hooks/usePlatforms'
 
 const GameHeading = ({ gameQuery }) => {
   const { data: genres } = useGenres()
   const genre = genres.results.find((g) => g.id === gameQuery.genreId)
 
-  const { platform } = usePlatform(gameQuery.platformId)
+  const { data: platforms } = usePlatforms()
+  const platform = platforms.results.find((g) => g.id === gameQuery.platformId)
 
   const heading = `${platform?.name || ''} ${genre?.name || ''} Games`
 
