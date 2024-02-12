@@ -2,7 +2,7 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import SearchBar from './SearchBar'
 
-const Navbar = ({ onSearch }) => {
+const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -20,7 +20,7 @@ const Navbar = ({ onSearch }) => {
           >
             Rawg API
           </Typography>
-          <SearchBar onSearch={onSearch} />
+          <SearchBar />
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
-import { useState } from 'react'
 import GameHeading from './components/GameHeading'
 import GengreHeading from './components/GengreHeading'
 import PlatformSelector from './components/PlatformSelector'
@@ -10,13 +9,9 @@ import GameGrid from './layouts/GameGrid'
 import GenreList from './layouts/GenreList'
 
 function App() {
-  const [gameQuery, setGameQuery] = useState({})
-
   return (
     <>
-      <Navbar
-        onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
-      />
+      <Navbar />
       <Box sx={{ m: 1 }}>
         <Grid container spacing={1}>
           <Grid item xs={6} sm={4} md={4} lg={3} xl={2}>

@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { InputBase } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
 import { useRef } from 'react'
+import useQueryStore from '../../store'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -46,13 +47,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
   const ref = useRef(null)
+  const setSearchText = useQueryStore((s) => s.setSearchText)
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        if (ref.current) onSearch(ref.current.value)
+        if (ref.current) setSearchText(ref.current.value)
       }}
     >
       <Search>
