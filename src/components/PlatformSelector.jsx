@@ -7,7 +7,7 @@ import useQueryStore from '../store'
 const PlatformSelector = () => {
   const { data, error } = usePlatforms()
 
-  const setSelectPlatformId = useQueryStore((s) => s.platformId)
+  const setSelectPlatformId = useQueryStore((s) => s.setPlatformId)
   const selectedPlatformId = useQueryStore((s) => s.gameQuery.platformId)
 
   const selectedPlatform = usePlatform(selectedPlatformId)
@@ -32,7 +32,7 @@ const PlatformSelector = () => {
               sx={{ fontFamily: 'rajdhani' }}
               key={platform.id}
               value={platform.name}
-              onClick={() => setSelectPlatformId(platform)}
+              onClick={() => setSelectPlatformId(platform.id)}
             >
               {platform.name}
             </MenuItem>

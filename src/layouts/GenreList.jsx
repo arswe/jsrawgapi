@@ -39,7 +39,7 @@ const GenreList = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
               }}
-              onClick={() => setSelectedGenreId(genre)}
+              onClick={() => setSelectedGenreId(genre.id)}
             >
               {genre.name}
             </Typography>
