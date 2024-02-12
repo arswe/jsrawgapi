@@ -1,8 +1,13 @@
 import usePlatforms from './usePlatforms'
 
-const usePlatform = (id = null) => {
+const usePlatform = (id) => {
   const { data: platforms } = usePlatforms()
-  return platforms?.results.find((p) => p.id === id)
+
+  if (!platforms) {
+    return null
+  }
+
+               return platforms.results.find((p) => p.id === id)
 }
 
 export default usePlatform
