@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Box, Typography } from '@mui/material'
+import useGenre from '../hooks/useGenre'
 
 const GengreHeading = ({ gameQuery }) => {
-  const genreHeading = `${gameQuery.genre?.name || 'Genres'}`
+  const genre = useGenre(gameQuery.genreId)
+  const genreHeading = `${genre?.name || 'Genres'}`
   return (
     <Box sx={{ my: 2 }}>
       <Typography
