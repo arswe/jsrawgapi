@@ -15,7 +15,7 @@ const GenreList = () => {
   const { data, error, isLaoding } = useGenres()
 
   const selectedGenreId = useQueryStore((s) => s.gameQuery.genreId)
-  const setGenreId = useQueryStore((s) => s.setGenreId)
+  const setSelectedGenreId = useQueryStore((s) => s.setGenreId)
 
   if (error) return <div>Something went wrong!</div>
   if (isLaoding) return <CircularProgress />
@@ -39,7 +39,7 @@ const GenreList = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
               }}
-              onClick={() => setGenreId(genre)}
+              onClick={() => setSelectedGenreId(genre)}
             >
               {genre.name}
             </Typography>
