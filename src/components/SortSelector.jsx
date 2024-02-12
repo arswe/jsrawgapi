@@ -18,7 +18,7 @@ const SortSelector = () => {
   const currentSortOrder = sortOrders.find((order) => order.value === sortOrder)
 
   return (
-    <Box sx={{ minWidth: 200 }}>
+    <Box sx={{ minWidth: 140 }}>
       <FormControl fullWidth>
         <InputLabel
           size='small'

@@ -42,7 +42,6 @@ const GameGrid = () => {
           ))}
         </React.Fragment>
       ))}
-
       {hasNextPage && (
         <Button
           variant='outlined'

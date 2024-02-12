@@ -15,7 +15,7 @@ const PlatformSelector = () => {
   if (error) return null
 
   return (
-    <Box sx={{ minWidth: 200 }}>
+    <Box sx={{ minWidth: 140 }}>
       <FormControl fullWidth>
         <InputLabel size='small' id='Platform' sx={{ fontFamily: 'rajdhani' }}>
           {selectedPlatform?.name || 'Platform'}
