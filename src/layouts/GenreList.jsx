@@ -8,10 +8,14 @@ import {
   Typography,
 } from '@mui/material'
 import useGenres from '../hooks/useGenres'
+import useQueryStore from '../store'
 import getCroppedImageUrl from '../utils/image-url'
 
-const GenreList = ({ onSelectGenre, selectedGenreId }) => {
+const GenreList = () => {
   const { data, error, isLaoding } = useGenres()
+
+  const selectedGenreId = useQueryStore((s) => s.gameQuery.genreId)
+  const setGenreId = useQueryStore((s) => s.setGenreId)
 
   if (error) return <div>Something went wrong!</div>
   if (isLaoding) return <CircularProgress />
@@ -35,7 +39,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }) => {
                 cursor: 'pointer',
                 textAlign: 'left',
               }}
-              onClick={() => onSelectGenre(genre)}
+              onClick={() => setGenreId(genre)}
             >
               {genre.name}
             </Typography>
