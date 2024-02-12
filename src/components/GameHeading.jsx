@@ -6,9 +6,9 @@ import useQueryStore from '../store'
 
 const GameHeading = () => {
   const genreId = useQueryStore((s) => s.gameQuery.genreId)
-  const platformId = useQueryStore((s) => s.gameQuery.platformId)
-
   const genre = useGenre(genreId)
+
+  const platformId = useQueryStore((s) => s.gameQuery.platformId)
   const platform = usePlatform(platformId)
 
   const heading = `${platform?.name || ''} ${genre?.name || ''} Games`

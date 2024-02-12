@@ -2,9 +2,13 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import usePlatform from '../hooks/usePlatform'
 import usePlatforms from '../hooks/usePlatforms'
+import useQueryStore from '../store'
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }) => {
+const PlatformSelector = () => {
   const { data, error } = usePlatforms()
+
+  const setSelectPlatformId = useQueryStore((s) => s.platformId)
+  const selectedPlatformId = useQueryStore((s) => s.gameQuery.platformId)
 
   const selectedPlatform = usePlatform(selectedPlatformId)
 
@@ -28,7 +32,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }) => {
               sx={{ fontFamily: 'rajdhani' }}
               key={platform.id}
               value={platform.name}
-              onClick={() => onSelectPlatform(platform)}
+              onClick={() => setSelectPlatformId(platform)}
             >
               {platform.name}
             </MenuItem>

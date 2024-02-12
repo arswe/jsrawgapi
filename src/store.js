@@ -7,8 +7,8 @@ const useQueryStore = create((set) => ({
     set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
   setPlatformId: (platformId) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
-  setSortOder: (sortOder) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, sortOder } })),
+  setSortOder: (sortOrder) =>
+    set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
 }))
 
 export default useQueryStore

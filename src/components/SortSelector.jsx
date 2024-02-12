@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import useQueryStore from '../store'
 
-const SortSelector = ({ onSelectSortOrder, sortOrder }) => {
+const SortSelector = () => {
   const sortOrders = [
     { value: '', label: 'Relevance' },
     { value: '-added', label: 'Date added' },
@@ -10,6 +11,9 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }) => {
     { value: '-metacritic', label: 'Popularity' },
     { value: '-rating', label: 'Average rating' },
   ]
+
+  const setSelectSortOrder = useQueryStore((s) => s.sortOrder)
+  const sortOrder = useQueryStore((s) => s.gameQuery.sortOrder)
 
   const currentSortOrder = sortOrders.find((order) => order.value === sortOrder)
 
@@ -35,7 +39,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }) => {
               sx={{ fontFamily: 'rajdhani' }}
               key={sortOrder.label}
               value={sortOrder.value}
-              onClick={() => onSelectSortOrder(sortOrder.value)}
+              onClick={() => setSelectSortOrder(sortOrder.value)}
             >
               {sortOrder.label}
             </MenuItem>

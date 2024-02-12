@@ -22,20 +22,10 @@ function App() {
           <Grid item xs={6} sm={8} md={8} lg={9} xl={10}>
             <GameHeading />
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <PlatformSelector
-                selectedPlatform={gameQuery.platformId}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platformId: platform.id })
-                }
-              />
-              <SortSelector
-                sortOrder={gameQuery.sortOrder}
-                onSelectSortOrder={(sortOrder) =>
-                  setGameQuery({ ...gameQuery, sortOrder })
-                }
-              />
+              <PlatformSelector />
+              <SortSelector />
             </Box>
-            <GameGrid gameQuery={gameQuery} />
+            <GameGrid />
           </Grid>
         </Grid>
       </Box>
